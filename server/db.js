@@ -5,10 +5,13 @@ const uri = 'mongodb+srv://Hydrodata:Vikes23@hydroponicdata.rrapohr.mongodb.net/
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
+let isConnected = false;
+
 async function connectDB() {
-    if (!client.isConnected()) {
+    if (!isConnected) {
         try {
             await client.connect();
+            isConnected = true;
         } catch (error) {
             console.error('Failed to connect to MongoDB:', error);
         }
@@ -17,3 +20,4 @@ async function connectDB() {
 }
 
 module.exports = connectDB;
+
