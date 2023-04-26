@@ -24,7 +24,7 @@ function App() {
                             element={
                                 <>
                                     <Dashboard />
-                                    { /* <MongoDB setConnectionStatus={setConnectionStatus} />*/}
+                                    {/*<MongoDB setConnectionStatus={setConnectionStatus} /> */}
                                     <Container>
                                         <Typography variant="h5" align="center" gutterBottom>
                                             Harvest progress
