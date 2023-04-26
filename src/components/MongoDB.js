@@ -9,17 +9,15 @@ const MongoDB = () => {
             const response = await fetch('http://localhost:3001/api/get-data');
             const result = await response.json();
             if (response.status === 200) {
-                setData(result.data);
+                setData(result);
                 setConnectionStatus('Successfully fetched data from MongoDB!');
-            } else {
-                throw new Error(result.error);
             }
         } catch (error) {
             console.error('Error:', error);
             setConnectionStatus('Failed to fetch data from MongoDB. Error: ' + error.message);
         }
     }
-
+    
     useEffect(() => {
         fetchData();
     }, []);

@@ -11,7 +11,7 @@ const Dashboard = () => {
             const response = await fetch('http://localhost:3001/api/get-data');
             const result = await response.json();
             if (response.status === 200) {
-                setSensorData(result.data.map(item => ({
+                setSensorData(result.map(item => ({
                     timestamp: item.DateAndTime,
                     temperature: item.PLC_Temperature_Value,
                     humidity: item.PLC_Humidity_Value,
@@ -25,6 +25,7 @@ const Dashboard = () => {
             console.error('Error:', error);
         }
     };
+    
 
     useEffect(() => {
         const intervalId = setInterval(() => {
