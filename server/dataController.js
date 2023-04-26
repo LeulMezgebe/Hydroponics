@@ -29,7 +29,7 @@ async function fetchAllData() {
             .sort({DateAndTime: -1})
             .limit(20)
             .toArray();
-        return data;
+        return data.reverse();
     } catch (error) {
         throw error;
     }
