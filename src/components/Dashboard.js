@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { ResponsiveContainer, Label } from 'recharts';
 import { Container, Grid, Typography, Card, CardContent } from '@mui/material';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-
 const Dashboard = () => {
     const [sensorData, setSensorData] = useState([]);
 
