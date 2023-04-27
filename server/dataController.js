@@ -21,8 +21,21 @@ async function fetchDataRange(startTime, endTime) {
         throw error;
     }
 }
-
+async function fetchAllData() {
+    const mongoClient = await connectDB();
+    try {
+        const data = await mongoClient.db().collection('plcdata')
+            .find({})
+            .sort({DateAndTime: -1})
+            .limit(20)
+            .toArray();
+        return data.reverse();
+    } catch (error) {
+        throw error;
+    }
+}
 module.exports = {
     fetchLatestData,
-    fetchDataRange
+    fetchDataRange,
+    fetchAllData
 };
