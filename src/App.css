@@ -44,18 +44,19 @@
   color: #61dafb;
 }
 
-.tabledata {
-  width: max-content;
-}
-
 .tabledata td {
   text-align: center;
-  width: 100%;
 }
 
-.tabledata thead {
-  width: max-content;
+.headRow {
+  font-size: 20px;
 }
+
+.headrow {
+  font-size: 50px;
+ 
+}
+
 
 @keyframes App-logo-spin {
   from {
